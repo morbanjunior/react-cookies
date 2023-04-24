@@ -3,14 +3,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type loginType={
     //  user: any;
-    token: '';
+    tenbit: '';
   }
 
   // const usertoken = JSON.parse(localStorage.getItem('login') || "");
 //   console.log(JSON.parse(localStorage["login"]).token)
 
   const initialState = {
-     token: localStorage["login"] ? JSON.parse(localStorage["login"]).token : '',
+    tenbit: localStorage["session"] ? JSON.parse(localStorage["session"]).tenbit : '',
     //  user: null
   };
 
@@ -20,12 +20,12 @@ export type loginType={
     reducers:{
     setCredential(state, action){
         // state.user = action.payload.user
-        state.token = action.payload.token
+        state.tenbit = action.payload.tenbit
        
     },
     logOut: (state) =>{
         // state.user = null
-        state.token = ''
+        state.tenbit = ''
     }
   }
   })

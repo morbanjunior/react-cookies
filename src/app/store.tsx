@@ -23,5 +23,5 @@ import authReducer from "../features/auth/authSlice";
   export type RootState = ReturnType<typeof store.getState>;
   // export const selectUserData = (state:RootState) => state.user.userData;
   // export const selectCurrentUser = (state:RootState) => state.auth.user;
-  export const selectCurrentToken = (state:RootState) => state.auth.token;
+  export const selectCurrentToken = (state:RootState) => state.auth.tenbit;
   

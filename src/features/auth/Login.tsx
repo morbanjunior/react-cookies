@@ -33,6 +33,7 @@ const Login = () => {
             const userData = await login({ email, password }).unwrap()
             // console.log('logoin done')
             dispatch(setCredential(userData))
+            localStorage.setItem('session',JSON.stringify(userData));
             // console.log('credentianl done')
             setemail('')
             // console.log('clean email done')

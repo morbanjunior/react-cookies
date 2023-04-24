@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { logOut } from "./authSlice"
 import { useLogoutMutation } from "./authApiSlice"
 import { useEffect } from 'react'
-
+import Cookies from "js-cookie"
 
 
 const Welcome = () => {
@@ -13,7 +13,8 @@ const Welcome = () => {
     const token = useSelector(selectCurrentToken)
     const dispatch = useDispatch()
     const[logout, {error, isLoading, isSuccess}] = useLogoutMutation();
-   
+   const cook = Cookies.get('access_token')
+   console.log(Cookies.get())
 
     // const welcome = user ? `Welcome ${user}!` : 'Welcome!'
     const welcome = 'Welcome!'
@@ -23,6 +24,7 @@ const Welcome = () => {
         // 
         logout("")
         dispatch(logOut())
+        localStorage.removeItem('session')
         
        
     }

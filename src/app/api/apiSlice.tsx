@@ -10,10 +10,10 @@ import type {
 const baseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:5000',
     credentials: 'include',
-    prepareHeaders: (headers, { getState, endpoint}) => {
-        const token = (getState() as RootState).auth.token
-        if (token) {
-            headers.set('authorization', `Bearer ${token}`)
+    prepareHeaders: (headers, { getState}) => {
+        const tenbit = (getState() as RootState).auth.tenbit
+        if (tenbit) {
+            headers.set('authorization', `Bearer ${tenbit}`)
           }
       
           return headers
